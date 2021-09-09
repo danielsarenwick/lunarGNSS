@@ -2,10 +2,10 @@ import orekit
 from java.util import Arrays
 from numpy import zeros
 
+
+# defines a function to calculate the dilution of
 def calcDop(moon, propagators, points, t):
 
-    #latitude = zeros((len(t), points))
-    #longitude = zeros((len(t), points))
     GDoP = zeros((len(t), points))
     HDoP = zeros((len(t), points))
 
@@ -21,13 +21,11 @@ def calcDop(moon, propagators, points, t):
         for x in range(points):
             try:
                 DoP = moon.stations[x].compute(tt, Arrays.asList(propagators))
-                #latitude[y, x] = DoP.getLocation().getLatitude()
-                #longitude[y, x] = DoP.getLocation().getLongitude()
                 GDoP[y, x] = DoP.getGdop()
                 HDoP[y, x] = DoP.getHdop()
             except Exception:
                 pass
-    
+
         y += 1
     for x in range(len(propagators)):
         try:
@@ -37,5 +35,5 @@ def calcDop(moon, propagators, points, t):
             endParams[x, 2] = finalState.getI()
         except Exception:
             endParams[x, :] = 0
-        
+
     return GDoP, HDoP, endParams
