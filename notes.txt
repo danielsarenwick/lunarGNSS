@@ -1,0 +1,14 @@
+Use an anaconda installation using Python 3.7
+
+Requirements:
+
+Conda packages:
+- Orekit
+- Pip
+- Numpy
+- Pandas
+- Plotly
+- Tqdm
+
+Pip packages:
+- Pymoo
