@@ -105,7 +105,7 @@ if __name__ == '__main__':
     # determines whether to load a save or not.
     # if you want to start a fresh analysis, set x to 0
     # if you want to a previous analysis set x to 1
-    x = 1
+    x = 0
 
     if x == 0:
         # creates a fresh optimisation with the given variables,

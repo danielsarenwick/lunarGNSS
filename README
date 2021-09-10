@@ -1,15 +1,17 @@
 Steps to run the simulation:
 
 1. Install anaconda following the appropriate steps for your OS
-2. Add the conda-forge channel to your installation
+2. Add the conda-forge channel to your installation:
 	$ conda config --add channels conda-forge
 	$ conda config --set channel_priority strict
-3. Create a fresh Python 3.7 anaconda env called lunarGNSS and activate it
-	$ conda create -n lunarGNSS -y python==3.7
+3. Create a fresh Python 3 anaconda env called lunarGNSS and activate it:
+	$ conda create -n lunarGNSS
 	$ conda activate lunarGNSS
 4. Install the necessary conda packages:
-	$ conda install orekit pip numpy pandas plotly tqdm
-5. Finally, install pymoo using pip
-	$ pip install pymoo
+	$ conda install orekit numpy pandas plotly tqdm
+5. Install pymoo using pip:
+	$ pip install -U pymoo
+6. Due to a current bug within pymoo, scipy needs to be reverted to a previous version:
+	$ conda install scipy=1.6.3
 
 Read the comments in main.py which will instruct you on how to operate the scripts
